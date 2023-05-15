@@ -1,0 +1,28 @@
+function main
+	i :int= 0
+	input i
+	push i
+	call fib
+	i := pop
+	println i
+end
+
+function fib
+	fib_n :int= pop
+	fib_i :int= 0
+	fib_c :int= 0
+	fib_p :int= 1
+	fib_temp :int= 0
+	lbl fib_loopstart
+	fib_i ++
+	fib_temp := fib_c
+    fib_c += fib_p
+    fib_p := fib_temp
+	jle fib_i fib_n fib_loopstart
+	push fib_c
+	delete fib_n
+	delete fib_i
+	delete fib_c
+	delete fib_p
+	delete fib_temp
+end

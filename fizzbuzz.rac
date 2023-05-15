@@ -1,0 +1,31 @@
+function main
+	i :int= 1
+	temp :int= i
+	lbl loop_start
+	temp := i
+	temp %= 15
+	jne temp 0 fizz
+	println "Fizz Buzz"
+	jmp end
+	
+	lbl fizz
+	temp := i
+	temp %= 3
+	jne temp 0 buzz
+	println "Fizz"
+	jmp end
+	
+	lbl buzz
+	temp := i
+	temp %= 5
+	jne temp 0 num
+	println "Buzz"
+	jmp end
+	
+	lbl num
+	println i
+	
+	lbl end
+	i ++
+	jne i 101 loop_start
+end
